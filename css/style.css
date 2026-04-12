@@ -5,17 +5,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Poppins", sans-serif;
   background: #edf3f8;
 }
-.header {
-  width: 100%;
+
+/* CONTAINER */
+.container {
   max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* HEADER */
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 60px;
+  padding: 30px 0;
   position: relative;
   z-index: 10;
 }
@@ -44,13 +52,15 @@ body {
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
+/* HERO */
 .hero {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 60px 60px 0;
+  padding: 60px 0 0;
   overflow: hidden;
   min-height: calc(100vh - 100px);
 }
@@ -58,7 +68,7 @@ body {
 .hero-content {
   max-width: 550px;
   z-index: 2;
-  margin-left: 200px;
+  margin-left: 60px;
 }
 
 .hero h1 {
@@ -83,6 +93,7 @@ body {
   padding: 15px 20px;
   outline: none;
   font-size: 15px;
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-form button {
@@ -93,6 +104,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   border-radius: 50px;
+  font-family: "Poppins", sans-serif;
 }
 
 .hero-text {
@@ -129,12 +141,10 @@ body {
   height: 500px;
 }
 
+/* WORK */
 .work {
-  display: flex;
-  align-items: center;
   background: #1b2d3e;
-  padding: 80px 80px;
-  gap: 80px;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
@@ -149,6 +159,15 @@ body {
   bottom: -10px;
   left: -200px;
   z-index: 0;
+}
+
+.work-inner {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
 }
 
 .work-left {
@@ -166,8 +185,8 @@ body {
 .work-left p {
   font-size: 14px;
   color: #8a9bb0;
-
   margin-bottom: 30px;
+  line-height: 1.7;
 }
 
 .btn-outline {
@@ -201,24 +220,22 @@ body {
 }
 
 .work-grid img {
-  height: 30px;
-  width: auto;
   width: 129px;
 }
 
+/* IMPLEMENT */
 .implement {
   display: flex;
   align-items: center;
-  padding: 60px 80px;
+  padding: 60px 0;
   gap: 80px;
-  background: #edf3f8;
   position: relative;
 }
 
 .implement::before {
   content: "";
   position: absolute;
-  left: 0;
+  left: -60px;
   top: 50%;
   transform: translateY(-50%);
   width: 4px;
@@ -251,8 +268,8 @@ body {
   padding: 20px 24px;
   font-family: "Courier New", monospace;
   font-size: 13px;
-
   color: #a8b8cc;
+  line-height: 1.8;
 }
 
 .implement-right {
@@ -273,13 +290,12 @@ body {
   line-height: 1.8;
 }
 
-/* SIMPLE UI & UX */
+/* SIMPLE */
 .simple {
   display: flex;
   align-items: center;
-  padding: 80px 80px 40px;
+  padding: 80px 0 40px;
   gap: 60px;
-  background: #edf3f8;
   position: relative;
   overflow: hidden;
 }
@@ -294,7 +310,6 @@ body {
   font-weight: 700;
   color: #36536b;
   margin-bottom: 20px;
-  font-family: "Playfair Display", serif;
 }
 
 .simple-left p {
@@ -310,7 +325,7 @@ body {
   margin-left: auto;
   position: relative;
   height: 340px;
-  width: 500px; /* ← qo'shing */
+  width: 500px;
   flex-shrink: 0;
 }
 
@@ -323,12 +338,11 @@ body {
 .phone-back {
   width: 180px;
   position: absolute;
-  right: 20px; /* ← 80px dan 20px ga */
+  right: 20px;
   bottom: 0;
   z-index: 1;
 }
 
-/* orqadagi doira */
 .simple-right::after {
   content: "";
   position: absolute;
@@ -346,13 +360,12 @@ body {
   display: flex;
   justify-content: center;
   gap: 40px;
-  padding: 60px 80px 80px;
-  background: #edf3f8;
+  padding: 60px 0 80px;
 }
 
 .feature-item {
-  gap: 30px;
   text-align: center;
+  max-width: 280px;
 }
 
 .feature-icon {
@@ -366,6 +379,10 @@ body {
   margin: 0 auto 20px;
 }
 
+.feature-icon img {
+  width: 40px;
+}
+
 .feature-item h3 {
   font-size: 16px;
   font-weight: 700;
@@ -374,24 +391,280 @@ body {
 }
 
 .feature-item p {
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 15px;
   color: #6c8294;
+  line-height: 1.7;
 }
 
+/* BATTON */
 .batton {
-  padding: 165px;
-  justify-content: space-between;
+  padding: 100px 0;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
 .batton h2 {
-  font-weight: 400px;
+  font-weight: 400;
   font-size: 48px;
   line-height: 56px;
   letter-spacing: -0.37px;
   color: #36536b;
 }
 
+/* ========== PLANSHET 769px - 1024px ========== */
+@media (min-width: 769px) and (max-width: 1024px) {
 
+  .container {
+    padding: 0 30px;
+  }
 
+  .hero-content {
+    margin-left: 20px;
+  }
 
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero-circle {
+    width: 450px;
+    height: 450px;
+    right: -100px;
+  }
+
+  .hero-image img {
+    width: 210px;
+    height: 400px;
+  }
+
+  .work-inner {
+    gap: 40px;
+    padding: 0 30px;
+  }
+
+  .work-grid img {
+    width: 100px;
+  }
+
+  .implement {
+    gap: 40px;
+  }
+
+  .simple-right {
+    width: 380px;
+  }
+
+  .batton {
+    padding: 80px 0;
+  }
+
+  .batton h2 {
+    font-size: 36px;
+  }
+}
+
+/* ========== KICHIK TELEFON 320px - 480px ========== */
+@media (min-width: 320px) and (max-width: 480px) {
+
+  .container {
+    padding: 0 16px;
+  }
+
+  /* HEADER */
+  .header {
+    padding: 16px 0;
+  }
+
+  .logo {
+    gap: 12px;
+  }
+
+  .logo img {
+    margin-right: 6px;
+  }
+
+  .logo a {
+    display: none;
+  }
+
+  .btn {
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  /* HERO */
+  .hero {
+    flex-direction: column;
+    padding: 30px 0 0;
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero-content {
+    margin-left: 0;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .hero-form {
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .hero-form button {
+    border-radius: 16px;
+    padding: 12px;
+  }
+
+  .hero-circle {
+    width: 260px;
+    height: 260px;
+    top: auto;
+    bottom: 0;
+    right: -50px;
+  }
+
+  .hero-image {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    margin-top: 24px;
+  }
+
+  .hero-image img {
+    width: 140px;
+    height: 260px;
+  }
+
+  /* WORK */
+  .work {
+    padding: 40px 0;
+  }
+
+  .work-inner {
+    flex-direction: column;
+    gap: 24px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .work-left {
+    max-width: 100%;
+  }
+
+  .work-left h2 {
+    font-size: 26px;
+  }
+
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .work-grid img {
+    width: 80px;
+  }
+
+  /* IMPLEMENT */
+  .implement {
+    flex-direction: column;
+    gap: 24px;
+    padding: 36px 0;
+  }
+
+  .implement::before {
+    display: none;
+  }
+
+  .implement-left {
+    width: 100%;
+  }
+
+  .code-block {
+    font-size: 11px;
+    padding: 14px 16px;
+  }
+
+  .implement-right {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .implement-right h2 {
+    font-size: 24px;
+  }
+
+  /* SIMPLE */
+  .simple {
+    flex-direction: column;
+    padding: 36px 0 24px;
+    text-align: center;
+  }
+
+  .simple-left {
+    max-width: 100%;
+  }
+
+  .simple-left h2 {
+    font-size: 24px;
+  }
+
+  .simple-right {
+    width: 100%;
+    height: 220px;
+    margin-left: 0;
+  }
+
+  .phone-front {
+    width: 110px;
+  }
+
+  .phone-back {
+    width: 100px;
+    right: 6px;
+  }
+
+  /* FEATURES */
+  .features {
+    flex-direction: column;
+    align-items: center;
+    padding: 36px 0;
+    gap: 30px;
+  }
+
+  .feature-item {
+    max-width: 260px;
+  }
+
+  .feature-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* BATTON */
+  .batton {
+    flex-direction: column;
+    padding: 40px 0;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .batton h2 {
+    font-size: 24px;
+  }
+
+  .batton .hero-form {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .batton .hero-form button {
+    border-radius: 16px;
+  }
+} 

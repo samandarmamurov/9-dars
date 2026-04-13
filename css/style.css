@@ -1,9 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap');
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
 }
 
 body {
@@ -13,9 +17,10 @@ body {
 
 /* CONTAINER */
 .container {
-  max-width: 1440px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 60px;
+  padding: 0 0px;
 }
 
 /* HEADER */
@@ -60,15 +65,17 @@ body {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 60px 0 0;
-  overflow: hidden;
-  min-height: calc(100vh - 100px);
+  
+  
+  height: 100vh;
 }
 
 .hero-content {
   max-width: 550px;
   z-index: 2;
-  margin-left: 60px;
+  
+  position: relative;
+  top: -60px;
 }
 
 .hero h1 {
@@ -114,25 +121,25 @@ body {
 
 .hero-text a {
   color: #36536b;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
 }
 
 .hero-circle {
   position: absolute;
-  width: 600px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   background: #c8d8e4;
   border-radius: 50%;
-  top: -80px;
-  right: -180px;
-  z-index: 0;
+  
+  top: -250px;
+  right: -300px; /* -280px o‘rniga */
 }
 
 .hero-image {
   position: absolute;
   right: 80px;
-  bottom: 0;
+  
   z-index: 1;
 }
 
@@ -165,7 +172,7 @@ body {
   display: flex;
   align-items: center;
   gap: 80px;
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 60px;
 }
@@ -369,9 +376,6 @@ body {
 }
 
 .feature-icon {
-  width: 106px;
-  height: 106px;
-  background: #36536b;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -380,7 +384,7 @@ body {
 }
 
 .feature-icon img {
-  width: 40px;
+  width: 106px;
 }
 
 .feature-item h3 {
@@ -413,42 +417,75 @@ body {
   color: #36536b;
 }
 
-/* ========== PLANSHET 769px - 1024px ========== */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* FOOTER */
+.footer {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1b262f;
+  padding: 0 60px;
+}
+
+.footer .logo a {
+  color: #fbfcfe;
+}
+
+.footer .logo img {
+  filter: brightness(0) invert(1);
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
 
   .container {
     padding: 0 30px;
   }
 
+  .hero {
+    min-height: auto;
+    padding: 60px 0;
+  }
+
   .hero-content {
-    margin-left: 20px;
+    top: 0;
   }
 
   .hero h1 {
     font-size: 36px;
   }
 
-  .hero-circle {
-    width: 450px;
-    height: 450px;
-    right: -100px;
+  .hero-image {
+    right: 40px;
   }
 
   .hero-image img {
-    width: 210px;
-    height: 400px;
+    width: 200px;
+    height: auto;
+  }
+
+  .hero-circle {
+    width: 500px;
+    height: 500px;
   }
 
   .work-inner {
+    flex-direction: column;
     gap: 40px;
+    text-align: center;
     padding: 0 30px;
   }
 
-  .work-grid img {
-    width: 100px;
+  .work-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .implement {
+    gap: 40px;
+  }
+
+  .simple {
     gap: 40px;
   }
 
@@ -456,25 +493,23 @@ body {
     width: 380px;
   }
 
-  .batton {
-    padding: 80px 0;
-  }
-
   .batton h2 {
     font-size: 36px;
   }
 }
 
-/* ========== KICHIK TELEFON 320px - 480px ========== */
-@media (min-width: 320px) and (max-width: 480px) {
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
 
   .container {
     padding: 0 16px;
   }
 
-  /* HEADER */
+  /* HEADER qusmi */
   .header {
-    padding: 16px 0;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .logo {
@@ -482,7 +517,7 @@ body {
   }
 
   .logo img {
-    margin-right: 6px;
+    margin-right: 0;
   }
 
   .logo a {
@@ -490,25 +525,25 @@ body {
   }
 
   .btn {
-    padding: 8px 14px;
     font-size: 12px;
+    padding: 8px 14px;
   }
 
-  /* HERO */
+  /* HERO qismi*/
   .hero {
     flex-direction: column;
-    padding: 30px 0 0;
-    min-height: auto;
     text-align: center;
+    padding: 40px 0;
+    min-height: auto;
   }
 
   .hero-content {
-    margin-left: 0;
+    top: 0;
     max-width: 100%;
   }
 
   .hero h1 {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .hero-form {
@@ -517,31 +552,31 @@ body {
   }
 
   .hero-form button {
+    width: 100%;
     border-radius: 16px;
-    padding: 12px;
-  }
-
-  .hero-circle {
-    width: 260px;
-    height: 260px;
-    top: auto;
-    bottom: 0;
-    right: -50px;
   }
 
   .hero-image {
     position: relative;
     right: auto;
-    bottom: auto;
-    margin-top: 24px;
+    margin-top: 30px;
   }
 
   .hero-image img {
-    width: 140px;
-    height: 260px;
+    width: 150px;
+    height: auto;
   }
 
-  /* WORK */
+  .hero-circle {
+    width: 300px;
+    height: 300px;
+    top: auto;
+    bottom: 0;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  /* WORK  qismi*/
   .work {
     padding: 40px 0;
   }
@@ -553,14 +588,6 @@ body {
     text-align: center;
   }
 
-  .work-left {
-    max-width: 100%;
-  }
-
-  .work-left h2 {
-    font-size: 26px;
-  }
-
   .work-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
@@ -570,7 +597,7 @@ body {
     width: 80px;
   }
 
-  /* IMPLEMENT */
+
   .implement {
     flex-direction: column;
     gap: 24px;
@@ -579,15 +606,6 @@ body {
 
   .implement::before {
     display: none;
-  }
-
-  .implement-left {
-    width: 100%;
-  }
-
-  .code-block {
-    font-size: 11px;
-    padding: 14px 16px;
   }
 
   .implement-right {
@@ -602,16 +620,8 @@ body {
   /* SIMPLE */
   .simple {
     flex-direction: column;
-    padding: 36px 0 24px;
     text-align: center;
-  }
-
-  .simple-left {
-    max-width: 100%;
-  }
-
-  .simple-left h2 {
-    font-size: 24px;
+    padding: 36px 0;
   }
 
   .simple-right {
@@ -633,25 +643,16 @@ body {
   .features {
     flex-direction: column;
     align-items: center;
-    padding: 36px 0;
     gap: 30px;
+    padding: 36px 0;
   }
 
-  .feature-item {
-    max-width: 260px;
-  }
-
-  .feature-icon {
-    width: 80px;
-    height: 80px;
-  }
-
-  /* BATTON */
+  /* BATTON  qismi */
   .batton {
     flex-direction: column;
-    padding: 40px 0;
-    gap: 20px;
     text-align: center;
+    gap: 20px;
+    padding: 40px 0;
   }
 
   .batton h2 {
@@ -659,12 +660,15 @@ body {
   }
 
   .batton .hero-form {
-    width: 100%;
     flex-direction: column;
     border-radius: 16px;
   }
 
-  .batton .hero-form button {
-    border-radius: 16px;
+  /* FOOTER qismi  */
+  .footer {
+    flex-direction: column;
+    gap: 16px;
+    height: auto;
+    padding: 20px 16px;
   }
-} 
+}
